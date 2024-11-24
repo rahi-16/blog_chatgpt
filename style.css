@@ -103,7 +103,8 @@ body {
 
 .featured-image img {
   width: 100%;
-  max-width: 1200px;
+  max-width: 2400px; /* Doubled the maximum width from 1200px to 2400px */
+  height: auto; /* Maintain aspect ratio */
   margin-right: 20px;
   border-radius: 5px;
 }
@@ -121,6 +122,16 @@ body {
 .featured-content p {
   margin-bottom: 20px;
 }
+
+/* Optional: Adjust for smaller devices */
+@media (max-width: 768px) {
+  .featured-image img {
+    max-width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove margin on smaller screens */
+  }
+}
+
+
 
 .featured-content button {
   background: #4CAF50;
@@ -236,7 +247,6 @@ body {
 
 /* Sub pages*/
 
-
 /* Style for Latest News Section */
 .latest-news .news-card {
   display: flex;
@@ -254,7 +264,7 @@ body {
 }
 
 .latest-news .news-card img {
-  width: 150px; /* Fixed image width */
+  width: 150px; /* Default image width */
   height: auto;
   border-radius: 5px;
   margin-right: 15px;
@@ -282,22 +292,44 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .latest-news .news-card {
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: flex-start; /* Align items to the left */
-    text-align: center;
+    flex-direction: row; /* Keep image and text in a row on mobile */
+    align-items: center; /* Keep vertical centering */
+    text-align: left; /* Ensure text is aligned to the left */
   }
 
   .latest-news .news-card img {
-    width: 100%; /* Image takes full width */
-    height: auto;	
-    margin: 0 0 10px; /* Add space below image */
+    width: 40%; /* Image takes 40% of the width */
+    height: auto;
+    margin-right: 15px; /* Space between image and text */
   }
 
-  .latest-news .news-card h3 {
-    text-align: center; /* Center-align the text */
-  }
-
+  .latest-news .news-card h3,
   .latest-news .news-card p {
-    text-align: center;
+    text-align: left; /* Align text to the left */
   }
 }
+
+/* Desktop - Increase Image Size by 2x */
+@media (min-width: 1024px) {
+  .latest-news .news-card img {
+    width: 300px; /* Increased image width (2x) on desktop */
+    height: auto;
+  }
+}
+
+
+.news-detail .news-content img {
+  width: 100%; /* Make the image take up the full width of its container */
+  max-width: 800px; /* Limit the maximum width to avoid stretching too much */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure no extra space below the image */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Optional: Add a media query for smaller devices (mobile-friendly) */
+@media (max-width: 768px) {
+  .news-detail .news-content img {
+    max-width: 100%; /* Ensure the image takes up the full width on mobile */
+  }
+}
+
