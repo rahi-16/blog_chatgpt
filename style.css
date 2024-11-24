@@ -1,0 +1,303 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(to right, #4CAF50, #388E3C); /* Gradient background for depth */
+  color: white;
+  padding: 30px 50px; /* Increased padding for a more spacious header */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Deepened shadow for a lifted effect */
+  border-radius: 10px; /* Rounded corners for a smooth, modern look */
+  text-align: center;
+  transition: background 0.3s ease-in-out; /* Smooth background transition on hover */
+}
+
+/* Header Title */
+.header h1 {
+  margin-bottom: 15px;
+  font-size: 36px; /* Larger font size for a bold impression */
+  font-family: 'Roboto', sans-serif; /* A modern and clean font */
+  font-weight: 700; /* Bold weight for emphasis */
+  text-transform: uppercase; /* Capitalized text for a formal look */
+  letter-spacing: 4px; /* More letter spacing for a polished effect */
+  color: #fff; /* Ensure the color is white */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in animation for the title */
+}
+
+
+
+/* Navigation Links */
+.nav {
+  text-align: center;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 20px; /* Default font size for larger screens */
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Header for Mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 30px; /* Adjust padding for smaller screens */
+  }
+
+  .header h1 {
+    font-size: 28px; /* Smaller font size on mobile */
+  }
+
+  /* Reduce the font size of navigation links on mobile */
+  .nav a {
+    font-size: 15px; /* Reduced font size for mobile devices */
+    margin: 0 15px; /* Adjusted margin to fit better on small screens */
+  }
+}
+
+
+
+
+
+/* Fade-In Animation for the header title */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Featured News */
+.featured-news {
+  display: flex;
+  flex-wrap: wrap;
+  background: #eee;
+  padding: 20px;
+  margin: 20px;
+  justify-content: center; /* Centers the content */
+}
+
+.featured-image img {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.featured-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.featured-content h2 {
+  font-size: 24px; /* Default size for mobile */
+  margin-bottom: 10px;
+}
+
+.featured-content p {
+  margin-bottom: 20px;
+}
+
+.featured-content button {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.featured-content button:hover {
+  background: #45a049;
+}
+
+/* News Grid */
+.news-grid {
+  padding: 20px;
+}
+
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centers the news cards */
+}
+
+.news-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  flex: 1 1 22%; /* Default to 4 columns on large screens */
+  max-width: 22%; /* Ensures 4 items per row */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.news-card img {
+  width: 100%;
+  height: auto;
+}
+
+.news-card h3 {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.news-card p {
+  padding: 0 10px 10px;
+}
+
+.news-card button {
+  background: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.news-card button:hover {
+  background: #0056b3;
+}
+
+/* Footer */
+.footer {
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+/* Mobile-Specific Layout */
+@media (max-width: 768px) {
+  .featured-news {
+    flex-direction: column;
+  }
+
+  .news-card {
+    flex: 1 1 48%; /* 2 columns on mobile */
+    max-width: 48%;
+  }
+
+  .news-container {
+    gap: 10px; /* Adjust spacing on smaller screens */
+  }
+}
+
+/* Larger Headline and Image Size on Desktop */
+@media (min-width: 1024px) {
+  .featured-content h2 {
+    font-size: 48px; /* Larger size for desktop */
+  }
+
+  .featured-image img {
+    max-width: 600px; /* Smaller image size for news details on desktop */
+  }
+}
+
+/* News Detail Section: Adjust Image Size for Desktop */
+@media (min-width: 1024px) {
+  .news-detail .news-content img {
+    max-width: 600px; /* Set the maximum width of the news detail image */
+  }
+}
+
+/* News Detail Section: Mobile Responsiveness */
+@media (max-width: 768px) {
+  .news-detail .news-content img {
+    width: 100%; /* Ensure the image takes full width on mobile */
+  }
+}
+
+/* Sub pages*/
+
+
+/* Style for Latest News Section */
+.latest-news .news-card {
+  display: flex;
+  flex-direction: row; /* Align image and text side by side */
+  align-items: center; /* Vertically center content */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  max-width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.latest-news .news-card img {
+  width: 150px; /* Fixed image width */
+  height: auto;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.latest-news .news-card h3 {
+  font-size: 18px;
+  margin: 0;
+  color: #333;
+}
+
+.latest-news .news-card p {
+  margin: 5px 0 0;
+  color: #666;
+}
+
+.latest-news .news-card a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .latest-news .news-card {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: flex-start; /* Align items to the left */
+    text-align: center;
+  }
+
+  .latest-news .news-card img {
+    width: 100%; /* Image takes full width */
+    height: auto;	
+    margin: 0 0 10px; /* Add space below image */
+  }
+
+  .latest-news .news-card h3 {
+    text-align: center; /* Center-align the text */
+  }
+
+  .latest-news .news-card p {
+    text-align: center;
+  }
+}
